@@ -53,15 +53,16 @@ class Server:
         data = []
         next_index = index + page_size
 
-        while index < next_index:
-            entry = self.indexed_dataset().get(index, None)
-            if entry:
-                data.append(entry)
-            index += 1
+        for value in range(index, next_index):
+            if self.indexed_dataset().get(value):
+                data.append(self.indexed_dataset()[value])
+            else:
+                value += 1
+                next_index += 1
 
         return {
-            'index': index - page_size,  # Adjusted to the starting index
+            'index': index,
             'data': data,
             'page_size': page_size,
             'next_index': next_index
-            }
+        }
