@@ -74,7 +74,7 @@ Use that class as config for your Flask app.
 
 - `GitHub repository`: `alx-backend`
 - `Directory`: `0x02-i18n`
-- `File`: [1-app.py(./1-app.py)], [templates/1-index.html](./templates/1-index.html)
+- `File`: [1-app.py](./1-app.py), [templates/1-index.html](./templates/1-index.html)
 
 ## 2. Get locale from request
 
