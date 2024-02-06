@@ -3,7 +3,6 @@
 - Use the _ or gettext function to parametrize your templates. Use the message
         IDs home_title and home_header.
 - Create a babel.cfg file
-- 
 """
 
 from flask import Flask, render_template, request
