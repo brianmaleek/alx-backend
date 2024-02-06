@@ -35,11 +35,12 @@ def get_user():
     - function returns a user dictionary or None if the ID cannot be found or
         if login_as was not passed
     """
-    try:
-        login_as = int(request.args.get('login_as'))
-        return users.get(login_as)
-    except Exception:
-        return None
+    if request.args.get('login_as'):
+        user = int(request.args.get('login_as'))
+        if user in users:
+            return users.get(user)
+        else:
+            return None
 
 
 # Define a before_request handler function
